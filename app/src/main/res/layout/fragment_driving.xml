@@ -8,7 +8,7 @@
     tools:context=".view.DrivingFragment">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/drivingScreenMainText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -19,113 +19,131 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/view2"
+        android:id="@+id/drivingMainView"
         android:layout_width="370dp"
         android:layout_height="45dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/driving_background_notification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/drivingScreenMainText" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/drivingMainText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sürücü Takip Ediliyor..."
         android:textSize="18dp"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/view2"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toTopOf="@+id/view2" />
+        app:layout_constraintBottom_toBottomOf="@+id/drivingMainView"
+        app:layout_constraintEnd_toEndOf="@+id/drivingMainView"
+        app:layout_constraintStart_toStartOf="@+id/drivingMainView"
+        app:layout_constraintTop_toTopOf="@+id/drivingMainView" />
 
     <View
-        android:id="@+id/view3"
+        android:id="@+id/drivingNotificationView"
         android:layout_width="370dp"
         android:layout_height="45dp"
         android:layout_marginTop="18dp"
         android:background="@drawable/driving_background_state"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        app:layout_constraintTop_toBottomOf="@+id/drivingMainView" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/drivingNotificationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Yorgunluk Durumu: "
         android:textColor="@color/white"
         android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toTopOf="@+id/view3" />
+        app:layout_constraintBottom_toBottomOf="@+id/drivingNotificationView"
+        app:layout_constraintStart_toStartOf="@+id/drivingNotificationView"
+        app:layout_constraintTop_toTopOf="@+id/drivingNotificationView" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/drivingNotificationResultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Normal"
-        android:textSize="18dp"
+        android:textSize="24dp"
         android:textColor="#4CAF50"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toTopOf="@+id/textView7" />
+        app:layout_constraintStart_toEndOf="@+id/drivingNotificationText"
+        app:layout_constraintTop_toTopOf="@+id/drivingNotificationText" />
 
     <View
-        android:id="@+id/view4"
+        android:id="@+id/drivingResultView"
         android:layout_width="370dp"
         android:layout_height="325dp"
         android:layout_marginTop="18dp"
         android:background="@drawable/driving_background_notification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3" />
+        app:layout_constraintTop_toBottomOf="@+id/drivingNotificationView" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/drivingResultNotificationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="En Yakın Dinlenme Tesisleri"
         android:textSize="24dp"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/view4"
-        app:layout_constraintStart_toStartOf="@+id/view4"
-        app:layout_constraintTop_toTopOf="@+id/view4" />
+        app:layout_constraintEnd_toEndOf="@+id/drivingResultView"
+        app:layout_constraintStart_toStartOf="@+id/drivingResultView"
+        app:layout_constraintTop_toTopOf="@+id/drivingResultView" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/drivingResultMainText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Henüz Yorgunluk Algılanmadı!"
         android:textColor="@color/white"
         android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/view4"
-        app:layout_constraintStart_toStartOf="@+id/view4"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintEnd_toEndOf="@+id/drivingResultView"
+        app:layout_constraintStart_toStartOf="@+id/drivingResultView"
+        app:layout_constraintTop_toBottomOf="@+id/drivingResultNotificationText" />
 
     <View
-        android:id="@+id/view5"
+        android:id="@+id/drivingEndView"
         android:layout_width="370dp"
         android:layout_height="45dp"
         android:layout_marginTop="18dp"
         android:background="@drawable/driving_background_alert"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view4" />
+        app:layout_constraintTop_toBottomOf="@+id/drivingResultView" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/drivingEndText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Yolculuğu Sonlandır!"
         android:textSize="24dp"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/view5"
-        app:layout_constraintEnd_toEndOf="@+id/view5"
-        app:layout_constraintStart_toStartOf="@+id/view5"
-        app:layout_constraintTop_toTopOf="@+id/view5" />
+        app:layout_constraintBottom_toBottomOf="@+id/drivingEndView"
+        app:layout_constraintEnd_toEndOf="@+id/drivingEndView"
+        app:layout_constraintStart_toStartOf="@+id/drivingEndView"
+        app:layout_constraintTop_toTopOf="@+id/drivingEndView" />
+
+    <FrameLayout
+        android:id="@+id/drivingTirednessState"
+        android:layout_width="370dp"
+        android:layout_height="325dp"
+        android:background="@drawable/driving_background_notification"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/drivingEndView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drivingNotificationView">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

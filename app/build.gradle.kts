@@ -57,10 +57,15 @@ dependencies {
     implementation("com.google.firebase:firebase-storage")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
 
     val nav_version = "2.7.7"
     // Kotlin
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation("com.squareup.picasso:picasso:2.71828")
+    implementation("io.socket:socket.io-client:2.0.1")
+    implementation("com.google.android.gms:play-services-maps:17.0.1")
+    implementation("com.google.android.libraries.places:places:2.5.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 }
