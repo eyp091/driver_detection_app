@@ -5,3 +5,4 @@
 /build/
 /captures/
 .externalNativeBuild/
+/FirebaseTestApp2/app/src/main/java/com/escandan/firebasetestapp2/util/LocationService.kt
