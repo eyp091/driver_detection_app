@@ -40,6 +40,7 @@ class HomepageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.newDrivingButton.setOnClickListener { newDriving(it) }
+        binding.logoutButton.setOnClickListener { logout(it) }
 
         getAuthUser()
     }
@@ -63,6 +64,12 @@ class HomepageFragment : Fragment() {
 
     private fun newDriving (view: View) {
         val action = HomepageFragmentDirections.actionHomepageFragmentToDrivingFragment()
+        view.findNavController().navigate(action)
+    }
+
+    private fun logout(view: View) {
+        auth.signOut()
+        val action = HomepageFragmentDirections.actionHomepageFragmentToLoginFragment()
         view.findNavController().navigate(action)
     }
 

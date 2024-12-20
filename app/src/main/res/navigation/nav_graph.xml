@@ -34,10 +34,17 @@
         <action
             android:id="@+id/action_homepageFragment_to_drivingFragment"
             app:destination="@id/drivingFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/drivingFragment"
         android:name="com.escandan.firebasetestapp2.view.DrivingFragment"
         android:label="fragment_driving"
-        tools:layout="@layout/fragment_driving" />
+        tools:layout="@layout/fragment_driving" >
+        <action
+            android:id="@+id/action_drivingFragment_to_homepageFragment2"
+            app:destination="@id/homepageFragment" />
+    </fragment>
 </navigation>

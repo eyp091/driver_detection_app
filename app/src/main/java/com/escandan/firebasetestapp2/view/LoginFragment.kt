@@ -41,6 +41,8 @@ class LoginFragment : Fragment() {
         val guncelKullanıcı = auth.currentUser
         if (guncelKullanıcı != null) {
             //kullanıcı giriş yapmış
+            val action = LoginFragmentDirections.actionLoginFragmentToHomepageFragment()
+            view.findNavController().navigate(action)
         }
     }
 
@@ -50,19 +52,24 @@ class LoginFragment : Fragment() {
     }
 
     fun login(view: View) {
-
         val email = binding.emailText.text.toString()
         val password = binding.passwordText.text.toString()
 
-        auth.signInWithEmailAndPassword(email, password)
-            .addOnSuccessListener { task ->
-                // Sign in success, update UI with the signed-in user's information
-                val user = auth.currentUser
-                val action = LoginFragmentDirections.actionLoginFragmentToHomepageFragment()
-                view.findNavController().navigate(action)
-            }.addOnFailureListener {exception ->
-                Toast.makeText(requireContext(), exception.localizedMessage, Toast.LENGTH_LONG).show()
-            }
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnSuccessListener { task ->
+                    // Sign in success, update UI with the signed-in user's information
+                    val user = auth.currentUser
+                    val action = LoginFragmentDirections.actionLoginFragmentToHomepageFragment()
+                    view.findNavController().navigate(action)
+                }.addOnFailureListener {exception ->
+                    Toast.makeText(requireContext(), exception.localizedMessage, Toast.LENGTH_LONG).show()
+                }
+        } else {
+            Toast.makeText(requireContext(), "Lütfen kullanıcı adı ve şifrenizi girin", Toast.LENGTH_LONG).show()
+        }
+
+
     }
 
     override fun onDestroyView() {

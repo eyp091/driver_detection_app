@@ -14,6 +14,7 @@
         android:layout_marginTop="72dp"
         android:ems="10"
         android:hint="Ad Soyad"
+        android:textColor="#000000"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +27,7 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="Email"
+        android:textColor="#000000"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,6 +40,7 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="Doğum Günü"
+        android:textColor="#000000"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +53,7 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="Şifre"
+        android:textColor="#000000"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,8 +65,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:text="Kaydol"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#2196F3"
+        app:layout_constraintEnd_toEndOf="@+id/signupPasswordText"
         app:layout_constraintTop_toBottomOf="@+id/signupPasswordText" />
+
+    <Button
+        android:id="@+id/signupLoginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giriş Yap"
+        android:onClick="goToLoginPage"
+        android:textColor="#2196F3"
+        app:layout_constraintStart_toStartOf="@+id/signupPasswordText"
+        app:layout_constraintTop_toTopOf="@+id/signupSignupButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

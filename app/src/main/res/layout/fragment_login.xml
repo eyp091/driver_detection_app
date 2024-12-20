@@ -16,6 +16,7 @@
         android:ems="10"
         android:hint="Emailinizi Giriniz"
         android:inputType="textEmailAddress"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,6 +29,7 @@
         android:ems="10"
         android:hint="Şifrenizi Giriniz"
         android:inputType="textPassword"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailText" />
@@ -38,6 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Kaydol"
+        android:textColor="#2196F3"
         app:layout_constraintStart_toStartOf="@+id/passwordText"
         app:layout_constraintTop_toBottomOf="@+id/passwordText" />
 
@@ -46,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Giriş Yap"
+        android:textColor="#2196F3"
         app:layout_constraintEnd_toEndOf="@+id/passwordText"
         app:layout_constraintTop_toTopOf="@+id/signupButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

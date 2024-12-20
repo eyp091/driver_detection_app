@@ -21,6 +21,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.escandan.firebasetestapp2.R
@@ -57,6 +58,7 @@ class DrivingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding?.drivingEndView?.setOnClickListener { backToHomepage(it) }
 
         //recycler view'ı tanımla
         recyclerView = view.findViewById(R.id.recyclerView)
@@ -123,16 +125,18 @@ class DrivingFragment : Fragment() {
         // socketioManager ve bağlantı işlemleri
         socketioManager = SocketioManager { message ->
             requireActivity().runOnUiThread {
-                if (message == "normal") {
-                    binding.drivingNotificationResultText.text = message
-                    binding.drivingTirednessState.isVisible = false
-                } else if (message == "yorgun") {
-                    binding.drivingNotificationResultText.text = message
-                    binding.drivingNotificationResultText.setTextColor(resources.getColor(android.R.color.holo_red_dark))
-                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 100f, locationListener!!)
-                    binding.drivingTirednessState.isVisible = true
-                } else {
-                    binding.drivingNotificationResultText.text = message
+                if (_binding != null) {
+                    if (message == "normal") {
+                        binding.drivingNotificationResultText.text = message
+                        binding.drivingTirednessState.isVisible = false
+                    } else if (message == "yorgun") {
+                        binding.drivingNotificationResultText.text = message
+                        binding.drivingNotificationResultText.setTextColor(resources.getColor(android.R.color.holo_red_dark))
+                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 100f, locationListener!!)
+                        binding.drivingTirednessState.isVisible = true
+                    } else {
+                        binding.drivingNotificationResultText.text = message
+                    }
                 }
             }
         }
@@ -157,9 +161,19 @@ class DrivingFragment : Fragment() {
         }
     }
 
+    private fun backToHomepage(view: View){
+        if (_binding == null) {
+            Log.e("DrivingFragment", "Binding is null, cannot navigate to homepage")
+            return
+        }
+        val action = DrivingFragmentDirections.actionDrivingFragmentToHomepageFragment2()
+        view.findNavController().navigate(action)
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        locationListener = null
         socketioManager.disconnected()
     }
 

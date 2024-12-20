@@ -42,6 +42,7 @@ class SignupFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.signupSignupButton.setOnClickListener { signup(it) }
+        binding.signupLoginButton.setOnClickListener { goToLoginPage(it) }
     }
 
     fun signup(view: View) {
@@ -50,7 +51,7 @@ class SignupFragment : Fragment() {
         val name = binding.nameText.text.toString()
         val date = binding.dateText.text.toString()
 
-        if (email.isNotEmpty() && password.isNotEmpty()) {
+        if (email.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty() && date.isNotEmpty()) {
             auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     // verileri veritabanına kaydedebiliriz.
@@ -77,10 +78,14 @@ class SignupFragment : Fragment() {
                 Toast.makeText(requireContext(), exception.localizedMessage, Toast.LENGTH_LONG).show()
             }
         } else {
-            Toast.makeText(requireContext(), "E-posta ve şifre boş olamaz.", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Lütfen zorunlu alanları doldurunuz!", Toast.LENGTH_LONG).show()
         }
     }
 
+    private fun goToLoginPage(view: View) {
+        val action = SignupFragmentDirections.actionSignupFragmentToLoginFragment()
+        view.findNavController().navigate(action)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

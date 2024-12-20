@@ -56,8 +56,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Yorgunluk Durumu: "
-        android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textColor="#000000"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/drivingNotificationView"
         app:layout_constraintStart_toStartOf="@+id/drivingNotificationView"
         app:layout_constraintTop_toTopOf="@+id/drivingNotificationView" />
@@ -66,10 +66,11 @@
         android:id="@+id/drivingNotificationResultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="18dp"
         android:text="Normal"
-        android:textSize="24dp"
         android:textColor="#4CAF50"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/drivingNotificationText"
         app:layout_constraintStart_toEndOf="@+id/drivingNotificationText"
         app:layout_constraintTop_toTopOf="@+id/drivingNotificationText" />
 
@@ -113,6 +114,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="18dp"
         android:background="@drawable/driving_background_alert"
+        android:onClick="backToHomepage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/drivingResultView" />

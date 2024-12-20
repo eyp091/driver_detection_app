@@ -25,6 +25,7 @@ class SocketioManager(private val messageCallback: (String) -> Unit) {
                 socket.emit("status", JSONObject().apply {
                     put("message", "Ready.")
                 })
+
             }
 
             //sunucudan gelen mesajları dinle
@@ -40,10 +41,15 @@ class SocketioManager(private val messageCallback: (String) -> Unit) {
                 }
             }
 
+
             socket.on(Socket.EVENT_DISCONNECT) {
+                socket.emit("status", JSONObject().apply {
+                    put("message", "closed")
+                })
                 Log.d("socket.io","socket.io server disconnected!")
                 messageCallback("disconnected")
             }
+
         }
         catch (e: URISyntaxException) {
             Log.d("socket.io", "Connection error: ${e.message}")
@@ -51,6 +57,10 @@ class SocketioManager(private val messageCallback: (String) -> Unit) {
     }
 
     fun disconnected() {
+        socket.emit("status", JSONObject().apply {
+            put("message", "closed")
+        })
+
         socket.disconnect()
     }
 }

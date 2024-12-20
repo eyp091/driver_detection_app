@@ -13,8 +13,6 @@ import com.escandan.firebasetestapp2.model.GasStation
 import com.google.android.gms.maps.model.LatLng
 
 class GasStationAdapter(
-    //private val gasStations: List<GasStation>,
-    //private val onItemClick: (GasStation) -> Unit
     private val context: Context,
     private val gasStations: List<GasStation>,
     private val userLocation: LatLng
@@ -37,12 +35,6 @@ class GasStationAdapter(
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 context.startActivity(intent)
             }
-
-            /*
-            itemView.setOnClickListener {
-                onItemClick(gasStation)
-            }
-             */
         }
     }
 
