@@ -18,7 +18,13 @@ class GasStationAdapter(
     private val userLocation: LatLng
 ) : RecyclerView.Adapter<GasStationAdapter.GasStationViewHolder>() {
 
-    inner class GasStationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    private var selectedGasStation: GasStation? = null
+
+    fun getSelectedGasStation(): GasStation? {
+        return selectedGasStation
+    }
+
+    inner class GasStationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameTextView: TextView = itemView.findViewById(R.id.stationName)
         private val addressTextView: TextView = itemView.findViewById(R.id.stationAddress)
 
@@ -27,6 +33,9 @@ class GasStationAdapter(
             addressTextView.text = gasStation.address
 
             itemView.setOnClickListener {
+                // Tıklanan istasyonu sakla
+                selectedGasStation = gasStation
+
                 val destinationLat = gasStation.latitude
                 val destinationLng = gasStation.longitude
 
@@ -49,5 +58,4 @@ class GasStationAdapter(
         val gasStation = gasStations[position]
         holder.bind(gasStation)
     }
-
 }

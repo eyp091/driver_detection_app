@@ -18,21 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="260dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="76dp"
-        android:text="Bilgileri Güncelle"
-        android:textColor="#2196F3"
-        android:textColorHighlight="#673AB7"
-        android:textColorLink="#9C27B0"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
+        android:id="@+id/drivingDetailButton"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="48dp"
@@ -53,7 +39,7 @@
         android:textColor="#2196F3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/drivingDetailButton" />
 
     <TextView
         android:id="@+id/textView2"

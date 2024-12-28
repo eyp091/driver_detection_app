@@ -33,7 +33,6 @@ class SocketioManager(private val messageCallback: (String) -> Unit) {
                 if (args.isNotEmpty()) {
                     val data = args[0] as JSONObject
                     val message = data.optString("message", "unknown message!")
-                    Log.d("socket.io", "Message from the socket.io server: $message")
                     messageCallback(message) //callback ile mesaj gönderme
                 }
                 else {
@@ -43,9 +42,6 @@ class SocketioManager(private val messageCallback: (String) -> Unit) {
 
 
             socket.on(Socket.EVENT_DISCONNECT) {
-                socket.emit("status", JSONObject().apply {
-                    put("message", "closed")
-                })
                 Log.d("socket.io","socket.io server disconnected!")
                 messageCallback("disconnected")
             }

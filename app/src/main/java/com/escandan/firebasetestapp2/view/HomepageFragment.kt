@@ -41,6 +41,7 @@ class HomepageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.newDrivingButton.setOnClickListener { newDriving(it) }
         binding.logoutButton.setOnClickListener { logout(it) }
+        binding.drivingDetailButton.setOnClickListener { drivingDetailPage(it) }
 
         getAuthUser()
     }
@@ -64,6 +65,11 @@ class HomepageFragment : Fragment() {
 
     private fun newDriving (view: View) {
         val action = HomepageFragmentDirections.actionHomepageFragmentToDrivingFragment()
+        view.findNavController().navigate(action)
+    }
+
+    private fun drivingDetailPage(view: View) {
+        val action = HomepageFragmentDirections.actionHomepageFragmentToDrivingDetailFragment()
         view.findNavController().navigate(action)
     }
 
